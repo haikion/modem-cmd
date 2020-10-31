@@ -23,7 +23,7 @@ def modemcmd(port, cmd, timeout=0.3):
 
     cmd = cmd + '\r'
     try:
-        serial.write(cmd)
+        serial.write(cmd.encode())
     except SerialTimeoutException:
         raise ModemcmdTimeoutException('Write timeout')
 
