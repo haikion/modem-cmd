@@ -31,4 +31,4 @@ def modemcmd(port, cmd, timeout=0.3):
     if lines == '':  # timeout
         raise ModemcmdTimeoutException('Read timeout')
 
-    return "".join(lines)
+    return b"".join(lines).decode()
